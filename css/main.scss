@@ -1,11 +1,94 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: #026;
+//font-family: 'Merriweather', serif;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap'); 
+//null style
+@import 'nullStile.scss'; 
+
+$default_font: 'Merriweather', serif;
+$neon_border: solid 2px #0f0;
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    font: 100% $font-stack;
-    color: $primary-color;
-    background: #fafafa;
-    p {
-        font-size: 25px;
+    font-family: $default_font;
+    font-weight: 400;
+    color: #fff;
+    background-color: #000;
+    height: 100vh;
+    margin: 0;
+}
+
+h1, h2{
+    font-size: 24px;
+}
+
+#page-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+#grid-container {
+    display: grid;
+}
+
+main{
+    border: $neon_border;
+}
+
+@media only screen and (min-width: 601px){       //desktop 
+    main{
+        width: min(max(50vw, 800px), calc(100% - 4rem));
+        margin: 8rem auto 2rem auto;
+    }
+
+    .bodywidth {
+        width: min(max(50vw, 800px), calc(100% - 4rem));
+        margin: 0 auto;
     }
 }
+
+@media only screen and (max-width: 600px){       //mobile 
+    main {
+        margin: 5rem 2rem 2rem 2rem;
+    }
+
+    .bodywidth {
+        margin: 0 2rem;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: $neon_border;
+    white-space: nowrap;
+    overflow: hidden;
+    h1{
+        font-size: 24px;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        padding: .3rem 0;
+        font-weight: 700;
+        font-style: italic;
+        letter-spacing: -.05rem;
+        a:link, a:visited {
+            color: #fff;
+            text-decoration: none;
+        }   
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
